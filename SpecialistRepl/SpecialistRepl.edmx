@@ -1,0 +1,802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SPECREPL_replicatingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tComplexes">
+          <Key>
+            <PropertyRef Name="Complex_TC" />
+          </Key>
+          <Property Name="Complex_TC" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="BranchOffice_TC" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="Admin_TC" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="Notes" Type="varchar" MaxLength="100" />
+          <Property Name="IsLocalComplex" Type="bit" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="500" />
+          <Property Name="SchemeFileName" Type="varchar" MaxLength="100" />
+          <Property Name="IsInUse" Type="bit" Nullable="false" />
+          <Property Name="Complex_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InputDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="Employee_TC" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="LastChangeDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="LastChanger_TC" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="AdminEmail" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="UrlName" Type="varchar" MaxLength="200" />
+          <Property Name="IsPublished" Type="bit" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="5000" />
+          <Property Name="WorkingHours" Type="varchar" MaxLength="5000" />
+          <Property Name="Metro" Type="varchar" MaxLength="500" />
+          <Property Name="PublicPhone" Type="varchar" MaxLength="250" />
+          <Property Name="TechEmail" Type="varchar" MaxLength="255" />
+          <Property Name="OurOrg_TC" Type="varchar" MaxLength="4" />
+          <Property Name="ShortUrl" Type="varchar" MaxLength="100" />
+          <Property Name="OfficialName" Type="varchar" MaxLength="300" />
+          <Property Name="CxCertPrefix" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tCourses">
+          <Key>
+            <PropertyRef Name="Course_TC" />
+          </Key>
+          <Property Name="Course_ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Course_TC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ParentCourse_TC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ReportsCourse_TC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="GruppsSheet" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="CourseDirection_TC" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="OurOrg_TC" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="HostingType_TC" Type="varchar" MaxLength="4" />
+          <Property Name="AuthorizationType_TC" Type="varchar" MaxLength="10" />
+          <Property Name="CSSClass_TC" Type="varchar" MaxLength="50" />
+          <Property Name="MaxDiscount" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="OrgPriceCoefficient" Type="decimal" Precision="6" Scale="4" />
+          <Property Name="Name" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="NameOfficial" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="NameOfficialEn" Type="varchar" MaxLength="500" />
+          <Property Name="WebName" Type="varchar" MaxLength="500" />
+          <Property Name="eLearningName" Type="varchar" MaxLength="500" />
+          <Property Name="BaseHours" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="AdditionalHours" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Weeks" Type="decimal" Precision="4" Scale="1" />
+          <Property Name="Days" Type="decimal" Precision="4" Scale="1" />
+          <Property Name="NormNumOfStudents" Type="tinyint" Nullable="false" />
+          <Property Name="MaxNumOfStudents" Type="tinyint" Nullable="false" />
+          <Property Name="PriceListOrder" Type="int" Nullable="false" />
+          <Property Name="DontShow" Type="bit" Nullable="false" />
+          <Property Name="IsTrack" Type="bit" />
+          <Property Name="IsExam" Type="bit" Nullable="false" />
+          <Property Name="IsNew" Type="bit" Nullable="false" />
+          <Property Name="WebPublishSchedule" Type="bit" />
+          <Property Name="AllowWebOrder" Type="bit" />
+          <Property Name="ProgramAccessible" Type="bit" Nullable="false" />
+          <Property Name="ProgramURL" Type="varchar" MaxLength="100" />
+          <Property Name="ProgramFileName" Type="varchar" MaxLength="100" />
+          <Property Name="ProgramTemplate_TC" Type="varchar" MaxLength="50" />
+          <Property Name="Prerequisites" Type="varchar" MaxLength="5000" />
+          <Property Name="PrerequisitesShort" Type="varchar" MaxLength="400" />
+          <Property Name="Introduction" Type="varchar" MaxLength="5000" />
+          <Property Name="WebTopic" Type="varchar" MaxLength="300" />
+          <Property Name="WebComment" Type="varchar" MaxLength="8000" />
+          <Property Name="OnComplete" Type="varchar" MaxLength="8000" />
+          <Property Name="WebDescription" Type="varchar(max)" />
+          <Property Name="Picture" Type="varchar" MaxLength="200" />
+          <Property Name="CopyCashPayment" Type="bit" Nullable="false" />
+          <Property Name="IsBookkeeperCourse" Type="bit" Nullable="false" />
+          <Property Name="BCTC_ContentExists" Type="bit" Nullable="false" />
+          <Property Name="BCTC_SeviceExpiresMonths" Type="tinyint" Nullable="false" />
+          <Property Name="BCTC_SeviceExpiresDateBeg" Type="tinyint" Nullable="false" />
+          <Property Name="Notes" Type="varchar" MaxLength="250" />
+          <Property Name="InputDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="Employee_TC" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="LastChangeDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="LastChanger_TC" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="WebYandexDescription" Type="varchar" MaxLength="8000" />
+          <Property Name="IsFeedingCourse" Type="bit" Nullable="false" />
+          <Property Name="WebShortName" Type="varchar" MaxLength="500" />
+          <Property Name="WebNameComment" Type="varchar" MaxLength="500" />
+          <Property Name="CourseDirectionA_TC" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="IsFreeConsultationExists" Type="bit" Nullable="false" />
+          <Property Name="CourseTest_TC" Type="varchar" MaxLength="50" />
+          <Property Name="InternetSpeed_TC" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CourseRequirements" Type="varchar" MaxLength="8000" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsSimple" Type="bit" Nullable="false" />
+          <Property Name="RatingCourse_TC" Type="varchar" MaxLength="50" />
+          <Property Name="IsPaperQuestionnaire" Type="bit" Nullable="false" />
+          <Property Name="IsQuestionnaired" Type="bit" Nullable="false" />
+          <Property Name="AnnounceDescription" Type="varchar" MaxLength="1500" />
+          <Property Name="AnnounceImage" Type="varchar" MaxLength="250" />
+          <Property Name="QualAdv_TC" Type="varchar" MaxLength="50" />
+          <Property Name="FeedingPrice" Type="money" />
+          <Property Name="PriceWithFeeding" Type="bit" Nullable="false" />
+          <Property Name="UrlName" Type="varchar" MaxLength="200" />
+          <Property Name="IsRestrictedSchedule" Type="bit" Nullable="false" />
+          <Property Name="WebSortOrder" Type="int" Nullable="false" />
+          <Property Name="IsAllowedHalfCoursePrice" Type="bit" Nullable="false" />
+          <Property Name="IsProjectAllowed" Type="bit" Nullable="false" />
+          <Property Name="IsPartner" Type="bit" Nullable="false" />
+          <Property Name="IsTheory" Type="bit" Nullable="false" />
+          <Property Name="SoftwareVersion" Type="varchar" MaxLength="250" />
+          <Property Name="SoftwareLanguage" Type="varchar" MaxLength="100" />
+          <Property Name="IsNotAuthorized" Type="bit" Nullable="false" />
+          <Property Name="ClassRoomType_ID" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="WebinarEduURL" Type="varchar" MaxLength="255" />
+          <Property Name="WebinarLabsURL" Type="varchar" MaxLength="255" />
+          <Property Name="WeightCoeff" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IsWebinarRecordExists" Type="bit" Nullable="false" />
+          <Property Name="IntraExtramuralHours" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="ActualityReason" Type="varchar" MaxLength="8000" />
+          <Property Name="IsPaperBookExists" Type="bit" Nullable="false" />
+          <Property Name="IsWebinarForbidden" Type="bit" Nullable="false" />
+          <Property Name="IsWebinarPlannedForbidden" Type="bit" Nullable="false" />
+          <Property Name="IntraExtramuralHoursOut" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IsUnlimitedTraining" Type="bit" Nullable="false" />
+          <Property Name="DiscountWebinar" Type="smallint" />
+          <Property Name="NameCertificate" Type="varchar" MaxLength="500" />
+          <Property Name="IsNotifyEngineers" Type="bit" Nullable="false" />
+          <Property Name="PlansInfo" Type="varchar" MaxLength="8000" />
+          <Property Name="IsDiplProg" Type="bit" Nullable="false" />
+          <Property Name="IsOutdated" Type="bit" Nullable="false" />
+          <Property Name="TechEquipCourseStudent" Type="varchar" MaxLength="5000" />
+          <Property Name="NormativeQuantity" Type="int" Nullable="false" />
+          <Property Name="TeacherMaterialsURL" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tGroups">
+          <Key>
+            <PropertyRef Name="Group_ID" />
+          </Key>
+          <Property Name="Group_ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Color_TC" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="BranchOffice_TC" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Complex_TC" Type="varchar" MaxLength="20" />
+          <Property Name="Course_TC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LectureType_TC" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="DayShift_TC" Type="varchar" MaxLength="3" />
+          <Property Name="DateBeg" Type="smalldatetime" />
+          <Property Name="DateEnd" Type="smalldatetime" />
+          <Property Name="TimeBeg" Type="smalldatetime" />
+          <Property Name="TimeEnd" Type="smalldatetime" />
+          <Property Name="DistDateBeg" Type="smalldatetime" />
+          <Property Name="DistDateEnd" Type="smalldatetime" />
+          <Property Name="LiteratureSent" Type="smalldatetime" />
+          <Property Name="LoginPasswordSent" Type="smalldatetime" />
+          <Property Name="Teacher_TC" Type="varchar" MaxLength="7" />
+          <Property Name="ClassRoom_TC" Type="varchar" MaxLength="15" />
+          <Property Name="IsEmploymentCenter" Type="bit" Nullable="false" />
+          <Property Name="ForOvertaking" Type="bit" Nullable="false" />
+          <Property Name="SupportingGroup" Type="bit" Nullable="false" />
+          <Property Name="IsBlazing" Type="bit" Nullable="false" />
+          <Property Name="TeacherIsInformed" Type="bit" Nullable="false" />
+          <Property Name="GroupIsInformed" Type="bit" Nullable="false" />
+          <Property Name="Hours" Type="decimal" Precision="5" Scale="1" Nullable="false" />
+          <Property Name="HoursAdditional" Type="decimal" Precision="5" Scale="1" Nullable="false" />
+          <Property Name="HoursGiven" Type="decimal" Precision="5" Scale="1" />
+          <Property Name="NumOfStudents" Type="smallint" Nullable="false" />
+          <Property Name="MaxNumOfStudents" Type="smallint" Nullable="false" />
+          <Property Name="DaySequence" Type="varchar" MaxLength="150" />
+          <Property Name="DaySequence_TC" Type="varchar" MaxLength="3" />
+          <Property Name="Notes" Type="varchar" MaxLength="3000" />
+          <Property Name="Sequence_ID" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ForUpdate" Type="char" MaxLength="10" />
+          <Property Name="InputDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="Employee_TC" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="LastChangeDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="LastChanger_TC" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="BaseGroup_ID" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="IsFirstTeachersGroup" Type="bit" Nullable="false" />
+          <Property Name="Curator_TC" Type="varchar" MaxLength="7" />
+          <Property Name="PrintAnnounce" Type="bit" Nullable="false" />
+          <Property Name="WebinarExists" Type="bit" Nullable="false" />
+          <Property Name="ForWebinarOnly" Type="bit" Nullable="false" />
+          <Property Name="Discount" Type="smallint" />
+          <Property Name="IsNotUsed4AutoDiscountRules" Type="bit" Nullable="false" />
+          <Property Name="IsConfirmedByTeacher" Type="bit" Nullable="false" />
+          <Property Name="MainGroup_ID" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="MegaGroup_ID" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="WebinarRecordURL" Type="varchar" MaxLength="255" />
+          <Property Name="WbnRecLogin" Type="varchar" MaxLength="25" />
+          <Property Name="WbnRecPwd" Type="varchar" MaxLength="25" />
+          <Property Name="IsAutoAnnounceDenied" Type="bit" Nullable="false" />
+          <Property Name="IsBroadcasting" Type="bit" Nullable="false" />
+          <Property Name="MaxNumOfWebinarists" Type="smallint" />
+          <Property Name="IsIntraExtramural" Type="bit" Nullable="false" />
+          <Property Name="UrlName" Type="varchar" MaxLength="250" />
+          <Property Name="IsRecordRequired" Type="bit" Nullable="false" />
+          <Property Name="IsFixedTeacher" Type="bit" Nullable="false" />
+          <Property Name="IsCanceledEnrollment" Type="bit" Nullable="false" />
+          <Property Name="IsCompetitorAllowed" Type="bit" Nullable="false" />
+          <Property Name="OurOrg_TC" Type="varchar" MaxLength="4" />
+          <Property Name="PresentationSemURL" Type="varchar" MaxLength="255" />
+          <Property Name="PromoSemGroupIDs" Type="varchar" MaxLength="500" />
+          <Property Name="TeamsUrl" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tLectures">
+          <Key>
+            <PropertyRef Name="Lecture_ID" />
+          </Key>
+          <Property Name="Lecture_ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Group_ID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="LectureDateBeg" Type="smalldatetime" Nullable="false" />
+          <Property Name="LectureDateEnd" Type="smalldatetime" Nullable="false" />
+          <Property Name="Breaks" Type="smallint" Nullable="false" />
+          <Property Name="Teacher_TC" Type="varchar" MaxLength="7" />
+          <Property Name="ClassRoom_TC" Type="varchar" MaxLength="15" />
+          <Property Name="Notes" Type="varchar" MaxLength="1000" />
+          <Property Name="InputDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="Employee_TC" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="LastChangeDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="LastChanger_TC" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="TrainerComingTime" Type="smalldatetime" />
+          <Property Name="IsQualityAssurance" Type="bit" Nullable="false" />
+          <Property Name="WebinarLicense_ID" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="WebinarURL" Type="varchar" MaxLength="250" />
+          <Property Name="WebCam_ID" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="tWebinarLicenses">
+          <Key>
+            <PropertyRef Name="WebinarLicense_ID" />
+          </Key>
+          <Property Name="WebinarLicense_ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LicenseName" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="LicenseLogin" Type="varchar" MaxLength="250" />
+          <Property Name="LicensePassword" Type="varchar" MaxLength="250" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="IsVisible" Type="bit" Nullable="false" />
+          <Property Name="AccessToken" Type="varchar" MaxLength="35" />
+          <Property Name="OrganizerKey" Type="bigint" />
+        </EntityType>
+        <EntityContainer Name="SPECREPL_replicatingModelStoreContainer">
+          <EntitySet Name="tComplexes" EntityType="Self.tComplexes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tCourses" EntityType="Self.tCourses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tGroups" EntityType="Self.tGroups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tLectures" EntityType="Self.tLectures" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tWebinarLicenses" EntityType="Self.tWebinarLicenses" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SPECREPL_replicatingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tCourses">
+          <Key>
+            <PropertyRef Name="Course_TC" />
+          </Key>
+          <Property Name="Course_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Course_TC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ParentCourse_TC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ReportsCourse_TC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GruppsSheet" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CourseDirection_TC" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OurOrg_TC" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HostingType_TC" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="AuthorizationType_TC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CSSClass_TC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaxDiscount" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="OrgPriceCoefficient" Type="Decimal" Precision="6" Scale="4" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NameOfficial" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NameOfficialEn" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="WebName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="eLearningName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="BaseHours" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="AdditionalHours" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Weeks" Type="Decimal" Precision="4" Scale="1" />
+          <Property Name="Days" Type="Decimal" Precision="4" Scale="1" />
+          <Property Name="NormNumOfStudents" Type="Byte" Nullable="false" />
+          <Property Name="MaxNumOfStudents" Type="Byte" Nullable="false" />
+          <Property Name="PriceListOrder" Type="Int32" Nullable="false" />
+          <Property Name="DontShow" Type="Boolean" Nullable="false" />
+          <Property Name="IsTrack" Type="Boolean" />
+          <Property Name="IsExam" Type="Boolean" Nullable="false" />
+          <Property Name="IsNew" Type="Boolean" Nullable="false" />
+          <Property Name="WebPublishSchedule" Type="Boolean" />
+          <Property Name="AllowWebOrder" Type="Boolean" />
+          <Property Name="ProgramAccessible" Type="Boolean" Nullable="false" />
+          <Property Name="ProgramURL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProgramFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProgramTemplate_TC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Prerequisites" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="PrerequisitesShort" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="Introduction" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="WebTopic" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="WebComment" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="OnComplete" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="WebDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Picture" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CopyCashPayment" Type="Boolean" Nullable="false" />
+          <Property Name="IsBookkeeperCourse" Type="Boolean" Nullable="false" />
+          <Property Name="BCTC_ContentExists" Type="Boolean" Nullable="false" />
+          <Property Name="BCTC_SeviceExpiresMonths" Type="Byte" Nullable="false" />
+          <Property Name="BCTC_SeviceExpiresDateBeg" Type="Byte" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="InputDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Employee_TC" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastChangeDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LastChanger_TC" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WebYandexDescription" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="IsFeedingCourse" Type="Boolean" Nullable="false" />
+          <Property Name="WebShortName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="WebNameComment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CourseDirectionA_TC" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsFreeConsultationExists" Type="Boolean" Nullable="false" />
+          <Property Name="CourseTest_TC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InternetSpeed_TC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CourseRequirements" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsSimple" Type="Boolean" Nullable="false" />
+          <Property Name="RatingCourse_TC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsPaperQuestionnaire" Type="Boolean" Nullable="false" />
+          <Property Name="IsQuestionnaired" Type="Boolean" Nullable="false" />
+          <Property Name="AnnounceDescription" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+          <Property Name="AnnounceImage" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="QualAdv_TC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FeedingPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PriceWithFeeding" Type="Boolean" Nullable="false" />
+          <Property Name="UrlName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="IsRestrictedSchedule" Type="Boolean" Nullable="false" />
+          <Property Name="WebSortOrder" Type="Int32" Nullable="false" />
+          <Property Name="IsAllowedHalfCoursePrice" Type="Boolean" Nullable="false" />
+          <Property Name="IsProjectAllowed" Type="Boolean" Nullable="false" />
+          <Property Name="IsPartner" Type="Boolean" Nullable="false" />
+          <Property Name="IsTheory" Type="Boolean" Nullable="false" />
+          <Property Name="SoftwareVersion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SoftwareLanguage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsNotAuthorized" Type="Boolean" Nullable="false" />
+          <Property Name="ClassRoomType_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WebinarEduURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="WebinarLabsURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="WeightCoeff" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IsWebinarRecordExists" Type="Boolean" Nullable="false" />
+          <Property Name="IntraExtramuralHours" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="ActualityReason" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="IsPaperBookExists" Type="Boolean" Nullable="false" />
+          <Property Name="IsWebinarForbidden" Type="Boolean" Nullable="false" />
+          <Property Name="IsWebinarPlannedForbidden" Type="Boolean" Nullable="false" />
+          <Property Name="IntraExtramuralHoursOut" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IsUnlimitedTraining" Type="Boolean" Nullable="false" />
+          <Property Name="DiscountWebinar" Type="Int16" />
+          <Property Name="NameCertificate" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IsNotifyEngineers" Type="Boolean" Nullable="false" />
+          <Property Name="PlansInfo" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="IsDiplProg" Type="Boolean" Nullable="false" />
+          <Property Name="IsOutdated" Type="Boolean" Nullable="false" />
+          <Property Name="TechEquipCourseStudent" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="NormativeQuantity" Type="Int32" Nullable="false" />
+          <Property Name="TeacherMaterialsURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tGroups">
+          <Key>
+            <PropertyRef Name="Group_ID" />
+          </Key>
+          <Property Name="Group_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Color_TC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="BranchOffice_TC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Complex_TC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Course_TC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LectureType_TC" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DayShift_TC" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="DateBeg" Type="DateTime" Precision="0" />
+          <Property Name="DateEnd" Type="DateTime" Precision="0" />
+          <Property Name="TimeBeg" Type="DateTime" Precision="0" />
+          <Property Name="TimeEnd" Type="DateTime" Precision="0" />
+          <Property Name="DistDateBeg" Type="DateTime" Precision="0" />
+          <Property Name="DistDateEnd" Type="DateTime" Precision="0" />
+          <Property Name="LiteratureSent" Type="DateTime" Precision="0" />
+          <Property Name="LoginPasswordSent" Type="DateTime" Precision="0" />
+          <Property Name="Teacher_TC" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="ClassRoom_TC" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="IsEmploymentCenter" Type="Boolean" Nullable="false" />
+          <Property Name="ForOvertaking" Type="Boolean" Nullable="false" />
+          <Property Name="SupportingGroup" Type="Boolean" Nullable="false" />
+          <Property Name="IsBlazing" Type="Boolean" Nullable="false" />
+          <Property Name="TeacherIsInformed" Type="Boolean" Nullable="false" />
+          <Property Name="GroupIsInformed" Type="Boolean" Nullable="false" />
+          <Property Name="Hours" Type="Decimal" Precision="5" Scale="1" Nullable="false" />
+          <Property Name="HoursAdditional" Type="Decimal" Precision="5" Scale="1" Nullable="false" />
+          <Property Name="HoursGiven" Type="Decimal" Precision="5" Scale="1" />
+          <Property Name="NumOfStudents" Type="Int16" Nullable="false" />
+          <Property Name="MaxNumOfStudents" Type="Int16" Nullable="false" />
+          <Property Name="DaySequence" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="DaySequence_TC" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Notes" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+          <Property Name="Sequence_ID" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ForUpdate" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="InputDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Employee_TC" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastChangeDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LastChanger_TC" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BaseGroup_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsFirstTeachersGroup" Type="Boolean" Nullable="false" />
+          <Property Name="Curator_TC" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="PrintAnnounce" Type="Boolean" Nullable="false" />
+          <Property Name="WebinarExists" Type="Boolean" Nullable="false" />
+          <Property Name="ForWebinarOnly" Type="Boolean" Nullable="false" />
+          <Property Name="Discount" Type="Int16" />
+          <Property Name="IsNotUsed4AutoDiscountRules" Type="Boolean" Nullable="false" />
+          <Property Name="IsConfirmedByTeacher" Type="Boolean" Nullable="false" />
+          <Property Name="MainGroup_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MegaGroup_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WebinarRecordURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="WbnRecLogin" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="WbnRecPwd" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="IsAutoAnnounceDenied" Type="Boolean" Nullable="false" />
+          <Property Name="IsBroadcasting" Type="Boolean" Nullable="false" />
+          <Property Name="MaxNumOfWebinarists" Type="Int16" />
+          <Property Name="IsIntraExtramural" Type="Boolean" Nullable="false" />
+          <Property Name="UrlName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsRecordRequired" Type="Boolean" Nullable="false" />
+          <Property Name="IsFixedTeacher" Type="Boolean" Nullable="false" />
+          <Property Name="IsCanceledEnrollment" Type="Boolean" Nullable="false" />
+          <Property Name="IsCompetitorAllowed" Type="Boolean" Nullable="false" />
+          <Property Name="OurOrg_TC" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="PresentationSemURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PromoSemGroupIDs" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="TeamsUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tLectures" Relationship="SPECREPL_replicatingModel.tGroupstLectures" FromRole="tGroups" ToRole="tLectures" />
+        </EntityType>
+        <EntityContainer Name="SPECREPL_replicatingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tCourses" EntityType="Self.tCourses" />
+          <EntitySet Name="tGroups" EntityType="Self.tGroups" />
+          <EntitySet Name="tWebinarLicenses" EntityType="SPECREPL_replicatingModel.tWebinarLicenses" />
+          <EntitySet Name="tLectures" EntityType="SPECREPL_replicatingModel.tLectures" />
+          <EntitySet Name="tComplexes" EntityType="SPECREPL_replicatingModel.tComplexes" />
+          <AssociationSet Name="tGroupstLectures" Association="SPECREPL_replicatingModel.tGroupstLectures">
+            <End Role="tGroups" EntitySet="tGroups" />
+            <End Role="tLectures" EntitySet="tLectures" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tWebinarLicenses">
+          <Key>
+            <PropertyRef Name="WebinarLicense_ID" />
+          </Key>
+          <Property Name="WebinarLicense_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LicenseName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="LicenseLogin" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="LicensePassword" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="IsVisible" Type="Boolean" Nullable="false" />
+          <Property Name="AccessToken" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="OrganizerKey" Type="Int64" />
+        </EntityType>
+        <EntityType Name="tLectures">
+          <Key>
+            <PropertyRef Name="Lecture_ID" />
+          </Key>
+          <Property Name="Lecture_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LectureDateBeg" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LectureDateEnd" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Breaks" Type="Int16" Nullable="false" />
+          <Property Name="Teacher_TC" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="ClassRoom_TC" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Notes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="InputDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Employee_TC" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="LastChangeDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LastChanger_TC" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="TrainerComingTime" Type="DateTime" Precision="0" />
+          <Property Name="IsQualityAssurance" Type="Boolean" Nullable="false" />
+          <Property Name="WebinarLicense_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WebinarURL" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="WebCam_ID" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="tGroups" Relationship="SPECREPL_replicatingModel.tGroupstLectures" FromRole="tLectures" ToRole="tGroups" />
+        </EntityType>
+        <EntityType Name="tComplexes">
+          <Key>
+            <PropertyRef Name="Complex_TC" />
+          </Key>
+          <Property Name="Complex_TC" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="BranchOffice_TC" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Admin_TC" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="Notes" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsLocalComplex" Type="Boolean" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SchemeFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsInUse" Type="Boolean" Nullable="false" />
+          <Property Name="Complex_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InputDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Employee_TC" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="LastChangeDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LastChanger_TC" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="AdminEmail" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="UrlName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="IsPublished" Type="Boolean" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="WorkingHours" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="Metro" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PublicPhone" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="TechEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OurOrg_TC" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="ShortUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OfficialName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="CxCertPrefix" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="tGroupstLectures">
+          <End Type="SPECREPL_replicatingModel.tGroups" Role="tGroups" Multiplicity="1" />
+          <End Type="SPECREPL_replicatingModel.tLectures" Role="tLectures" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SPECREPL_replicatingModelStoreContainer" CdmEntityContainer="SPECREPL_replicatingEntities">
+          <EntitySetMapping Name="tCourses">
+            <EntityTypeMapping TypeName="SPECREPL_replicatingModel.tCourses">
+              <MappingFragment StoreEntitySet="tCourses">
+                <ScalarProperty Name="Course_ID" ColumnName="Course_ID" />
+                <ScalarProperty Name="Course_TC" ColumnName="Course_TC" />
+                <ScalarProperty Name="ParentCourse_TC" ColumnName="ParentCourse_TC" />
+                <ScalarProperty Name="ReportsCourse_TC" ColumnName="ReportsCourse_TC" />
+                <ScalarProperty Name="GruppsSheet" ColumnName="GruppsSheet" />
+                <ScalarProperty Name="CourseDirection_TC" ColumnName="CourseDirection_TC" />
+                <ScalarProperty Name="OurOrg_TC" ColumnName="OurOrg_TC" />
+                <ScalarProperty Name="HostingType_TC" ColumnName="HostingType_TC" />
+                <ScalarProperty Name="AuthorizationType_TC" ColumnName="AuthorizationType_TC" />
+                <ScalarProperty Name="CSSClass_TC" ColumnName="CSSClass_TC" />
+                <ScalarProperty Name="MaxDiscount" ColumnName="MaxDiscount" />
+                <ScalarProperty Name="OrgPriceCoefficient" ColumnName="OrgPriceCoefficient" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameOfficial" ColumnName="NameOfficial" />
+                <ScalarProperty Name="NameOfficialEn" ColumnName="NameOfficialEn" />
+                <ScalarProperty Name="WebName" ColumnName="WebName" />
+                <ScalarProperty Name="eLearningName" ColumnName="eLearningName" />
+                <ScalarProperty Name="BaseHours" ColumnName="BaseHours" />
+                <ScalarProperty Name="AdditionalHours" ColumnName="AdditionalHours" />
+                <ScalarProperty Name="Weeks" ColumnName="Weeks" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+                <ScalarProperty Name="NormNumOfStudents" ColumnName="NormNumOfStudents" />
+                <ScalarProperty Name="MaxNumOfStudents" ColumnName="MaxNumOfStudents" />
+                <ScalarProperty Name="PriceListOrder" ColumnName="PriceListOrder" />
+                <ScalarProperty Name="DontShow" ColumnName="DontShow" />
+                <ScalarProperty Name="IsTrack" ColumnName="IsTrack" />
+                <ScalarProperty Name="IsExam" ColumnName="IsExam" />
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="WebPublishSchedule" ColumnName="WebPublishSchedule" />
+                <ScalarProperty Name="AllowWebOrder" ColumnName="AllowWebOrder" />
+                <ScalarProperty Name="ProgramAccessible" ColumnName="ProgramAccessible" />
+                <ScalarProperty Name="ProgramURL" ColumnName="ProgramURL" />
+                <ScalarProperty Name="ProgramFileName" ColumnName="ProgramFileName" />
+                <ScalarProperty Name="ProgramTemplate_TC" ColumnName="ProgramTemplate_TC" />
+                <ScalarProperty Name="Prerequisites" ColumnName="Prerequisites" />
+                <ScalarProperty Name="PrerequisitesShort" ColumnName="PrerequisitesShort" />
+                <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+                <ScalarProperty Name="WebTopic" ColumnName="WebTopic" />
+                <ScalarProperty Name="WebComment" ColumnName="WebComment" />
+                <ScalarProperty Name="OnComplete" ColumnName="OnComplete" />
+                <ScalarProperty Name="WebDescription" ColumnName="WebDescription" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="CopyCashPayment" ColumnName="CopyCashPayment" />
+                <ScalarProperty Name="IsBookkeeperCourse" ColumnName="IsBookkeeperCourse" />
+                <ScalarProperty Name="BCTC_ContentExists" ColumnName="BCTC_ContentExists" />
+                <ScalarProperty Name="BCTC_SeviceExpiresMonths" ColumnName="BCTC_SeviceExpiresMonths" />
+                <ScalarProperty Name="BCTC_SeviceExpiresDateBeg" ColumnName="BCTC_SeviceExpiresDateBeg" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+                <ScalarProperty Name="Employee_TC" ColumnName="Employee_TC" />
+                <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+                <ScalarProperty Name="LastChanger_TC" ColumnName="LastChanger_TC" />
+                <ScalarProperty Name="WebYandexDescription" ColumnName="WebYandexDescription" />
+                <ScalarProperty Name="IsFeedingCourse" ColumnName="IsFeedingCourse" />
+                <ScalarProperty Name="WebShortName" ColumnName="WebShortName" />
+                <ScalarProperty Name="WebNameComment" ColumnName="WebNameComment" />
+                <ScalarProperty Name="CourseDirectionA_TC" ColumnName="CourseDirectionA_TC" />
+                <ScalarProperty Name="IsFreeConsultationExists" ColumnName="IsFreeConsultationExists" />
+                <ScalarProperty Name="CourseTest_TC" ColumnName="CourseTest_TC" />
+                <ScalarProperty Name="InternetSpeed_TC" ColumnName="InternetSpeed_TC" />
+                <ScalarProperty Name="CourseRequirements" ColumnName="CourseRequirements" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsSimple" ColumnName="IsSimple" />
+                <ScalarProperty Name="RatingCourse_TC" ColumnName="RatingCourse_TC" />
+                <ScalarProperty Name="IsPaperQuestionnaire" ColumnName="IsPaperQuestionnaire" />
+                <ScalarProperty Name="IsQuestionnaired" ColumnName="IsQuestionnaired" />
+                <ScalarProperty Name="AnnounceDescription" ColumnName="AnnounceDescription" />
+                <ScalarProperty Name="AnnounceImage" ColumnName="AnnounceImage" />
+                <ScalarProperty Name="QualAdv_TC" ColumnName="QualAdv_TC" />
+                <ScalarProperty Name="FeedingPrice" ColumnName="FeedingPrice" />
+                <ScalarProperty Name="PriceWithFeeding" ColumnName="PriceWithFeeding" />
+                <ScalarProperty Name="UrlName" ColumnName="UrlName" />
+                <ScalarProperty Name="IsRestrictedSchedule" ColumnName="IsRestrictedSchedule" />
+                <ScalarProperty Name="WebSortOrder" ColumnName="WebSortOrder" />
+                <ScalarProperty Name="IsAllowedHalfCoursePrice" ColumnName="IsAllowedHalfCoursePrice" />
+                <ScalarProperty Name="IsProjectAllowed" ColumnName="IsProjectAllowed" />
+                <ScalarProperty Name="IsPartner" ColumnName="IsPartner" />
+                <ScalarProperty Name="IsTheory" ColumnName="IsTheory" />
+                <ScalarProperty Name="SoftwareVersion" ColumnName="SoftwareVersion" />
+                <ScalarProperty Name="SoftwareLanguage" ColumnName="SoftwareLanguage" />
+                <ScalarProperty Name="IsNotAuthorized" ColumnName="IsNotAuthorized" />
+                <ScalarProperty Name="ClassRoomType_ID" ColumnName="ClassRoomType_ID" />
+                <ScalarProperty Name="WebinarEduURL" ColumnName="WebinarEduURL" />
+                <ScalarProperty Name="WebinarLabsURL" ColumnName="WebinarLabsURL" />
+                <ScalarProperty Name="WeightCoeff" ColumnName="WeightCoeff" />
+                <ScalarProperty Name="IsWebinarRecordExists" ColumnName="IsWebinarRecordExists" />
+                <ScalarProperty Name="IntraExtramuralHours" ColumnName="IntraExtramuralHours" />
+                <ScalarProperty Name="ActualityReason" ColumnName="ActualityReason" />
+                <ScalarProperty Name="IsPaperBookExists" ColumnName="IsPaperBookExists" />
+                <ScalarProperty Name="IsWebinarForbidden" ColumnName="IsWebinarForbidden" />
+                <ScalarProperty Name="IsWebinarPlannedForbidden" ColumnName="IsWebinarPlannedForbidden" />
+                <ScalarProperty Name="IntraExtramuralHoursOut" ColumnName="IntraExtramuralHoursOut" />
+                <ScalarProperty Name="IsUnlimitedTraining" ColumnName="IsUnlimitedTraining" />
+                <ScalarProperty Name="DiscountWebinar" ColumnName="DiscountWebinar" />
+                <ScalarProperty Name="NameCertificate" ColumnName="NameCertificate" />
+                <ScalarProperty Name="IsNotifyEngineers" ColumnName="IsNotifyEngineers" />
+                <ScalarProperty Name="PlansInfo" ColumnName="PlansInfo" />
+                <ScalarProperty Name="IsDiplProg" ColumnName="IsDiplProg" />
+                <ScalarProperty Name="IsOutdated" ColumnName="IsOutdated" />
+                <ScalarProperty Name="TechEquipCourseStudent" ColumnName="TechEquipCourseStudent" />
+                <ScalarProperty Name="NormativeQuantity" ColumnName="NormativeQuantity" />
+                <ScalarProperty Name="TeacherMaterialsURL" ColumnName="TeacherMaterialsURL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tGroups">
+            <EntityTypeMapping TypeName="SPECREPL_replicatingModel.tGroups">
+              <MappingFragment StoreEntitySet="tGroups">
+                <ScalarProperty Name="Group_ID" ColumnName="Group_ID" />
+                <ScalarProperty Name="Color_TC" ColumnName="Color_TC" />
+                <ScalarProperty Name="BranchOffice_TC" ColumnName="BranchOffice_TC" />
+                <ScalarProperty Name="Complex_TC" ColumnName="Complex_TC" />
+                <ScalarProperty Name="Course_TC" ColumnName="Course_TC" />
+                <ScalarProperty Name="LectureType_TC" ColumnName="LectureType_TC" />
+                <ScalarProperty Name="DayShift_TC" ColumnName="DayShift_TC" />
+                <ScalarProperty Name="DateBeg" ColumnName="DateBeg" />
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+                <ScalarProperty Name="TimeBeg" ColumnName="TimeBeg" />
+                <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
+                <ScalarProperty Name="DistDateBeg" ColumnName="DistDateBeg" />
+                <ScalarProperty Name="DistDateEnd" ColumnName="DistDateEnd" />
+                <ScalarProperty Name="LiteratureSent" ColumnName="LiteratureSent" />
+                <ScalarProperty Name="LoginPasswordSent" ColumnName="LoginPasswordSent" />
+                <ScalarProperty Name="Teacher_TC" ColumnName="Teacher_TC" />
+                <ScalarProperty Name="ClassRoom_TC" ColumnName="ClassRoom_TC" />
+                <ScalarProperty Name="IsEmploymentCenter" ColumnName="IsEmploymentCenter" />
+                <ScalarProperty Name="ForOvertaking" ColumnName="ForOvertaking" />
+                <ScalarProperty Name="SupportingGroup" ColumnName="SupportingGroup" />
+                <ScalarProperty Name="IsBlazing" ColumnName="IsBlazing" />
+                <ScalarProperty Name="TeacherIsInformed" ColumnName="TeacherIsInformed" />
+                <ScalarProperty Name="GroupIsInformed" ColumnName="GroupIsInformed" />
+                <ScalarProperty Name="Hours" ColumnName="Hours" />
+                <ScalarProperty Name="HoursAdditional" ColumnName="HoursAdditional" />
+                <ScalarProperty Name="HoursGiven" ColumnName="HoursGiven" />
+                <ScalarProperty Name="NumOfStudents" ColumnName="NumOfStudents" />
+                <ScalarProperty Name="MaxNumOfStudents" ColumnName="MaxNumOfStudents" />
+                <ScalarProperty Name="DaySequence" ColumnName="DaySequence" />
+                <ScalarProperty Name="DaySequence_TC" ColumnName="DaySequence_TC" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Sequence_ID" ColumnName="Sequence_ID" />
+                <ScalarProperty Name="ForUpdate" ColumnName="ForUpdate" />
+                <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+                <ScalarProperty Name="Employee_TC" ColumnName="Employee_TC" />
+                <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+                <ScalarProperty Name="LastChanger_TC" ColumnName="LastChanger_TC" />
+                <ScalarProperty Name="BaseGroup_ID" ColumnName="BaseGroup_ID" />
+                <ScalarProperty Name="IsFirstTeachersGroup" ColumnName="IsFirstTeachersGroup" />
+                <ScalarProperty Name="Curator_TC" ColumnName="Curator_TC" />
+                <ScalarProperty Name="PrintAnnounce" ColumnName="PrintAnnounce" />
+                <ScalarProperty Name="WebinarExists" ColumnName="WebinarExists" />
+                <ScalarProperty Name="ForWebinarOnly" ColumnName="ForWebinarOnly" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="IsNotUsed4AutoDiscountRules" ColumnName="IsNotUsed4AutoDiscountRules" />
+                <ScalarProperty Name="IsConfirmedByTeacher" ColumnName="IsConfirmedByTeacher" />
+                <ScalarProperty Name="MainGroup_ID" ColumnName="MainGroup_ID" />
+                <ScalarProperty Name="MegaGroup_ID" ColumnName="MegaGroup_ID" />
+                <ScalarProperty Name="WebinarRecordURL" ColumnName="WebinarRecordURL" />
+                <ScalarProperty Name="WbnRecLogin" ColumnName="WbnRecLogin" />
+                <ScalarProperty Name="WbnRecPwd" ColumnName="WbnRecPwd" />
+                <ScalarProperty Name="IsAutoAnnounceDenied" ColumnName="IsAutoAnnounceDenied" />
+                <ScalarProperty Name="IsBroadcasting" ColumnName="IsBroadcasting" />
+                <ScalarProperty Name="MaxNumOfWebinarists" ColumnName="MaxNumOfWebinarists" />
+                <ScalarProperty Name="IsIntraExtramural" ColumnName="IsIntraExtramural" />
+                <ScalarProperty Name="UrlName" ColumnName="UrlName" />
+                <ScalarProperty Name="IsRecordRequired" ColumnName="IsRecordRequired" />
+                <ScalarProperty Name="IsFixedTeacher" ColumnName="IsFixedTeacher" />
+                <ScalarProperty Name="IsCanceledEnrollment" ColumnName="IsCanceledEnrollment" />
+                <ScalarProperty Name="IsCompetitorAllowed" ColumnName="IsCompetitorAllowed" />
+                <ScalarProperty Name="OurOrg_TC" ColumnName="OurOrg_TC" />
+                <ScalarProperty Name="PresentationSemURL" ColumnName="PresentationSemURL" />
+                <ScalarProperty Name="PromoSemGroupIDs" ColumnName="PromoSemGroupIDs" />
+                <ScalarProperty Name="TeamsUrl" ColumnName="TeamsUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tWebinarLicenses">
+            <EntityTypeMapping TypeName="SPECREPL_replicatingModel.tWebinarLicenses">
+              <MappingFragment StoreEntitySet="tWebinarLicenses">
+                <ScalarProperty Name="OrganizerKey" ColumnName="OrganizerKey" />
+                <ScalarProperty Name="AccessToken" ColumnName="AccessToken" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="LicensePassword" ColumnName="LicensePassword" />
+                <ScalarProperty Name="LicenseLogin" ColumnName="LicenseLogin" />
+                <ScalarProperty Name="LicenseName" ColumnName="LicenseName" />
+                <ScalarProperty Name="WebinarLicense_ID" ColumnName="WebinarLicense_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tLectures">
+            <EntityTypeMapping TypeName="SPECREPL_replicatingModel.tLectures">
+              <MappingFragment StoreEntitySet="tLectures">
+                <ScalarProperty Name="WebCam_ID" ColumnName="WebCam_ID" />
+                <ScalarProperty Name="WebinarURL" ColumnName="WebinarURL" />
+                <ScalarProperty Name="WebinarLicense_ID" ColumnName="WebinarLicense_ID" />
+                <ScalarProperty Name="IsQualityAssurance" ColumnName="IsQualityAssurance" />
+                <ScalarProperty Name="TrainerComingTime" ColumnName="TrainerComingTime" />
+                <ScalarProperty Name="LastChanger_TC" ColumnName="LastChanger_TC" />
+                <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+                <ScalarProperty Name="Employee_TC" ColumnName="Employee_TC" />
+                <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ClassRoom_TC" ColumnName="ClassRoom_TC" />
+                <ScalarProperty Name="Teacher_TC" ColumnName="Teacher_TC" />
+                <ScalarProperty Name="Breaks" ColumnName="Breaks" />
+                <ScalarProperty Name="LectureDateEnd" ColumnName="LectureDateEnd" />
+                <ScalarProperty Name="LectureDateBeg" ColumnName="LectureDateBeg" />
+                <ScalarProperty Name="Lecture_ID" ColumnName="Lecture_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tComplexes">
+            <EntityTypeMapping TypeName="SPECREPL_replicatingModel.tComplexes">
+              <MappingFragment StoreEntitySet="tComplexes">
+                <ScalarProperty Name="CxCertPrefix" ColumnName="CxCertPrefix" />
+                <ScalarProperty Name="OfficialName" ColumnName="OfficialName" />
+                <ScalarProperty Name="ShortUrl" ColumnName="ShortUrl" />
+                <ScalarProperty Name="OurOrg_TC" ColumnName="OurOrg_TC" />
+                <ScalarProperty Name="TechEmail" ColumnName="TechEmail" />
+                <ScalarProperty Name="PublicPhone" ColumnName="PublicPhone" />
+                <ScalarProperty Name="Metro" ColumnName="Metro" />
+                <ScalarProperty Name="WorkingHours" ColumnName="WorkingHours" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsPublished" ColumnName="IsPublished" />
+                <ScalarProperty Name="UrlName" ColumnName="UrlName" />
+                <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+                <ScalarProperty Name="LastChanger_TC" ColumnName="LastChanger_TC" />
+                <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+                <ScalarProperty Name="Employee_TC" ColumnName="Employee_TC" />
+                <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+                <ScalarProperty Name="Complex_ID" ColumnName="Complex_ID" />
+                <ScalarProperty Name="IsInUse" ColumnName="IsInUse" />
+                <ScalarProperty Name="SchemeFileName" ColumnName="SchemeFileName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="IsLocalComplex" ColumnName="IsLocalComplex" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Admin_TC" ColumnName="Admin_TC" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BranchOffice_TC" ColumnName="BranchOffice_TC" />
+                <ScalarProperty Name="Complex_TC" ColumnName="Complex_TC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="tGroupstLectures" TypeName="SPECREPL_replicatingModel.tGroupstLectures" StoreEntitySet="tLectures">
+            <EndProperty Name="tLectures">
+              <ScalarProperty Name="Lecture_ID" ColumnName="Lecture_ID" />
+            </EndProperty>
+            <EndProperty Name="tGroups">
+              <ScalarProperty Name="Group_ID" ColumnName="Group_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

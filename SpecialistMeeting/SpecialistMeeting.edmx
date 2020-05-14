@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SpecialistMeetingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GtmAlbumLog">
+          <Key>
+            <PropertyRef Name="GtmAlbumLogId" />
+          </Key>
+          <Property Name="GtmAlbumLogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AlbumId" Type="bigint" Nullable="false" />
+          <Property Name="AlbumName" Type="nvarchar" MaxLength="500" />
+          <Property Name="GroupId" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="AlbumUri" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="GtmUploadVideoLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MeetingId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GtmAlbumLogId" Type="int" />
+          <Property Name="Error" Type="nvarchar(max)" />
+          <Property Name="ClipId" Type="bigint" />
+          <Property Name="IsComplete" Type="bit" />
+          <Property Name="ClipUri" Type="nvarchar(max)" />
+          <Property Name="PathFile" Type="nvarchar(max)" />
+          <Property Name="GtmHistoricalMeetingSubject" Type="nvarchar(max)" />
+          <Property Name="SessionId" Type="nvarchar(max)" />
+          <Property Name="WebinarLicenseId" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="SpecialistMeetingModelStoreContainer">
+          <EntitySet Name="GtmAlbumLog" EntityType="Self.GtmAlbumLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GtmUploadVideoLog" EntityType="Self.GtmUploadVideoLog" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SpecialistMeetingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SpecialistMeetingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GtmAlbumLog" EntityType="SpecialistMeetingModel.GtmAlbumLog" />
+          <EntitySet Name="GtmUploadVideoLog" EntityType="SpecialistMeetingModel.GtmUploadVideoLog" />
+        </EntityContainer>
+        <EntityType Name="GtmAlbumLog">
+          <Key>
+            <PropertyRef Name="GtmAlbumLogId" />
+          </Key>
+          <Property Name="GtmAlbumLogId" Type="Int32" Nullable="false" />
+          <Property Name="AlbumId" Type="Int64" Nullable="false" />
+          <Property Name="AlbumName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GroupId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="AlbumUri" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GtmUploadVideoLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MeetingId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GtmAlbumLogId" Type="Int32" />
+          <Property Name="Error" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClipId" Type="Int64" />
+          <Property Name="IsComplete" Type="Boolean" />
+          <Property Name="ClipUri" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PathFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GtmHistoricalMeetingSubject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SessionId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WebinarLicenseId" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SpecialistMeetingModelStoreContainer" CdmEntityContainer="SpecialistMeetingEntities">
+          <EntitySetMapping Name="GtmAlbumLog">
+            <EntityTypeMapping TypeName="SpecialistMeetingModel.GtmAlbumLog">
+              <MappingFragment StoreEntitySet="GtmAlbumLog">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="AlbumUri" ColumnName="AlbumUri" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="AlbumName" ColumnName="AlbumName" />
+                <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+                <ScalarProperty Name="GtmAlbumLogId" ColumnName="GtmAlbumLogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GtmUploadVideoLog">
+            <EntityTypeMapping TypeName="SpecialistMeetingModel.GtmUploadVideoLog">
+              <MappingFragment StoreEntitySet="GtmUploadVideoLog">
+                <ScalarProperty Name="WebinarLicenseId" ColumnName="WebinarLicenseId" />
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+                <ScalarProperty Name="GtmHistoricalMeetingSubject" ColumnName="GtmHistoricalMeetingSubject" />
+                <ScalarProperty Name="PathFile" ColumnName="PathFile" />
+                <ScalarProperty Name="ClipUri" ColumnName="ClipUri" />
+                <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+                <ScalarProperty Name="ClipId" ColumnName="ClipId" />
+                <ScalarProperty Name="Error" ColumnName="Error" />
+                <ScalarProperty Name="GtmAlbumLogId" ColumnName="GtmAlbumLogId" />
+                <ScalarProperty Name="MeetingId" ColumnName="MeetingId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
